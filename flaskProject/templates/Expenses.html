@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Despesas</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #EDF3FB;
+        }
+
+        .sidebar {
+            height: 100%;
+            width: 150px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #ffffff;
+            padding-top: 20px;
+        }
+
+        .sidebar img.logo {
+            display: block;
+            margin: 0 auto;
+            width: 105px;
+            height: 95px;
+            margin-bottom: 20px;
+        }
+
+        .sidebar a.home {
+            margin-left: 10px;
+        }
+
+        .main-panel {
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .input-group {
+            margin-top: 60px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .input-group button {
+            width: 50%;
+            margin-top: 15px;
+            background-color: #B80A0A;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .input-group button:hover {
+            background-color: #FE3B3B;
+        }
+
+        .sidebar img.home {
+            display: block;
+            margin: 20px auto;
+            width: 39px;
+            height: 39px;
+        }
+
+        .sidebar .bottom-icons {
+            position: absolute;
+            bottom: 20px;
+            left: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-left: 30px;
+        }
+
+        .sidebar .bottom-icons img {
+            display: inline-block;
+            margin: 10px;
+            width: 39px;
+            height: 39px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="sidebar">
+        <img src="../static/Logo1.png" alt="Logo" class="logo">
+        <a href="/dashboard" class="home"><img src="../static/casa.png" alt="Home" class="home"></a>
+        <div class="bottom-icons">
+            <a href="/"><img src="../static/cartao-de-endereco.png" alt="Dashboard"></a>
+            <a href="#"><img src="../static/interrogatorio-de-escudo.png" alt="Settings"></a>
+        </div>
+    </div>
+
+    <div class="main-panel">
+        <h2 style="margin-bottom: 20px;">Despesas</h2>
+
+        <div class="input-group">
+            <form action="/adicionar_despesa" method="POST">
+                <input type="text" name="nome" placeholder="Nome da despesa">
+                <input type="date" name="data" placeholder="Data">
+                <input type="number" name="preco" placeholder="Preço">
+                <button type="submit">Adicionar Despesa</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

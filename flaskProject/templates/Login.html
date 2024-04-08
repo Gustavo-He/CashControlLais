@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Login</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f8f8f8;
+        }
+
+        .login-container {
+            text-align: center;
+            background-color: #f8f8f8;
+            padding: 60px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-container img {
+            width: 100px;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group input {
+            width: 110%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1.5px solid #ccc;
+            border-radius: 10px;
+            box-sizing: border-box;
+        }
+
+        .login-button {
+            min-width: 150px;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 20px;
+            background-color: #09E3A2;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .or {
+            margin-bottom: 30px;
+            color: #555;
+            margin-top: 15px;
+        }
+
+        .icon-group {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .icon-group img {
+            width: 30px;
+            margin: 0 10px;
+        }
+
+        .error-message {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <img src="../static/Logo1.png" alt="Logo" class="logo">
+    <form action="{{ url_for('login') }}" method="post">
+        <div class="input-group">
+            <input type="text" name="email" placeholder="Email ou Nome de Usuário">
+        </div>
+        <div class="input-group">
+            <input type="password" name="password" placeholder="Senha">
+        </div>
+        {% if error %}
+            <p class="error-message">{{ error }}</p>
+        {% endif %}
+        <button type="submit" class="login-button">Logar</button>
+    </form>
+    <div class="or">ou entre com</div>
+    <div class="icon-group">
+        <img src="../static/google.png" alt="Ícone 1">
+        <img src="../static/facebook.png" alt="Ícone 2">
+        <img src="../static/linkedin.png" alt="Ícone 3">
+    </div>
+</div>
+
+</body>
+</html>

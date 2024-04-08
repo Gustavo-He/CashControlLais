@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DashBoard</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #EDF3FB;
+        }
+
+        .sidebar {
+            height: 100%;
+            width: 150px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #ffffff;
+            padding-top: 20px;
+        }
+
+        .sidebar img.logo {
+            display: block;
+            margin: 0 auto;
+            width: 105px;
+            height: 95px;
+            margin-bottom: 20px;
+        }
+
+        .sidebar a.home { /* Adicionando margem à esquerda para alinhar com a logo */
+            margin-left: 10px;
+        }
+
+        .sidebar img.home {
+            display: block;
+            margin: 20px auto;
+            width: 39px;
+            height: 39px;
+        }
+
+        .sidebar .bottom-icons {
+            position: absolute;
+            bottom: 20px;
+            left: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-left: 30px;
+        }
+
+        .sidebar .bottom-icons img {
+            display: inline-block;
+            margin: 10px;
+            width: 39px;
+            height: 39px;
+        }
+
+        .main-panel {
+            margin-left: 170px; /* Largura da barra lateral + margem */
+            padding: 20px;
+            text-align: center; /* Centralizar conteúdo horizontalmente */
+        }
+
+        .main-panel h2 {
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px; /* Adicionando espaço entre os cards */
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+        }
+
+        .card {
+            /* Outros estilos existentes */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card .icon {
+            margin-bottom: 10px; /* Adiciona espaçamento entre a imagem e os outros elementos */
+        }
+
+        .tres-cards {
+            display: flex;
+            justify-content: space-around; /* Distribuindo os cards horizontalmente */
+            align-items: center; /* Centralizando verticalmente */
+            margin-bottom: 20px;
+        }
+
+        .list-container {
+            display: flex;
+            gap: 30px;
+            margin-top: 100px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .list {
+            max-width: 400px; /* Limitar a largura da lista para melhor legibilidade */
+        }
+
+        .list-item {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px; /* Adicionar espaço entre os itens da lista */
+        }
+
+        .list-item table {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .list-item table th,
+        .list-item table td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .list-item table th:first-child,
+        .list-item table td:first-child {
+            width: 30%; /* Ajustando a largura da primeira coluna */
+        }
+
+        .list-item img {
+            display: block;
+            margin: 0 auto;
+            width: 30px;
+            height: 30px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <img src="../static/Logo1.png" alt="Logo" class="logo">
+        <a href="#" class="home"><img src="../static/casa.png" alt="Home" class="home"></a>
+        <div class="bottom-icons">
+            <a href="/"><img src="../static/cartao-de-endereco.png" alt="Dashboard"></a>
+            <a href="#"><img src="../static/interrogatorio-de-escudo.png" alt="Settings"></a>
+        </div>
+    </div>
+
+    <div class="main-panel">
+        <div class="Desempenho">
+            <h2>Meu Desempenho <img src="../static/seta-para-a-direita.png" alt="Seta"></h2>
+            <div class="tres-cards">
+                <div class="card">
+                    <img src="../static/saldo.png" alt="Saldo" class="icon"> <!-- Nova imagem -->
+                    <h3>Saldo Atual <img src="../static/angulo-direito.png" alt="Seta"></h3>
+                    <p>R$</p>
+                </div>
+                <div class="card">
+                    <img src="../static/receitas.png" alt="Receitas" class="icon"> <!-- Nova imagem -->
+                    <h3>Receitas <img src="../static/angulo-direito.png" alt="Seta"></h3>
+                    <p>R$</p>
+                </div>
+                <div class="card">
+                    <img src="../static/despesas.png" alt="Despesas" class="icon"> <!-- Nova imagem -->
+                    <h3>Despesas <img src="../static/angulo-direito.png" alt="Seta"></h3>
+                    <p>R$</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <div class="list-container">
+            <div class="list">
+                <div class="list-item">
+                    <h2>Receitas</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Data</th>
+                                <th>Preço</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <a href="{{ url_for('receitas') }}">
+                        <img class="adc" src="../static/adicionar.png" alt="Seta">
+                    </a>
+                </div>
+            </div>
+
+            <div class="list">
+                <div class="list-item">
+                    <h2>Despesas</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Data</th>
+                                <th>Preço</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <a href="{{ url_for('despesas') }}">
+                        <img class="adc" src="../static/adicionar.png" alt="Seta">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

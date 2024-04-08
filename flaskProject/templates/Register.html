@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Cadastro</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f8f8f8;
+        }
+
+        .cadastro-container {
+            text-align: center;
+            background-color: #f8f8f8;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+
+        .cadastro-container img {
+            width: 100px;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+            border-radius:20px;
+        }
+
+        .input-group input {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-sizing: border-box;
+            outline: none; /
+            transition: border-color 0.3s;
+
+        }
+
+        .input-group input:focus {
+            border: 1.5px solid #000000;
+        }
+
+        .cadastro-button {
+            width: 50%;
+            padding: 10px 20px;
+            border: none;
+            background-color: #09E3A2;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 10px;
+            outline: none;
+            transition: background-color 0.3s;
+        }
+
+        .cadastro-button:hover {
+            background-color: #5AF58E;
+        }
+
+        .error-message {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+        <div class="cadastro-container">
+            <img src="../static/Logo1.png" alt="Logo" class="logo">
+            <form action="{{ url_for('cadastro') }}" method="post">
+                <div class="input-group">
+                    <input type="text" name="username" placeholder="Nome de Usuário">
+                </div>
+                <div class="input-group">
+                    <input type="email" name="email" placeholder="Email">
+                </div>
+                <div class="input-group">
+                    <input type="text" name="telefone" placeholder="Telefone">
+                </div>
+                <div class="input-group">
+                    <input type="text" name="rg" placeholder="RG">
+                </div>
+                <div class="input-group">
+                    <input type="text" name="cpf" placeholder="CPF">
+                </div>
+                <div class="input-group">
+                    <input type="text" name="banco" placeholder="Banco">
+                </div>
+                <div class="input-group">
+                    <input type="text" name="agencia" placeholder="Agência">
+                </div>
+                <div class="input-group">
+                    <input type="text" name="conta" placeholder="Conta">
+                </div>
+                <div class="input-group">
+                    <input type="password" name="password" placeholder="Senha">
+                </div>
+                <div class="input-group">
+                    <input type="password" name="confirm_password" placeholder="Repita a Senha">
+                </div>
+                {% if error %}
+                    <p class="error-message">{{ error }}</p>
+                {% endif %}
+                <button class="cadastro-button" type="submit">Cadastrar</button>
+            </form>
+        </div>
+
+</body>
+</html>

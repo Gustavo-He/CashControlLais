@@ -1,0 +1,33 @@
+CREATE TABLE Usuario (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    telefone VARCHAR(20),
+    rg VARCHAR(20),
+    cpf VARCHAR(14),
+    banco VARCHAR(50),
+    agencia VARCHAR(10),
+    conta VARCHAR(20),
+    senha VARCHAR(30) NOT NULL
+);
+
+
+CREATE TABLE Receitas (
+    id_receitas INT AUTO_INCREMENT PRIMARY KEY,
+	id INT,
+    valor_receitas DECIMAL(10, 2) NOT NULL,
+    desc_receitas VARCHAR(255),
+    data_emissao DATE,
+    categoria VARCHAR(100),
+    FOREIGN KEY (id) REFERENCES Usuario(id)
+);
+
+CREATE TABLE IF NOT EXISTS Despesas (
+    id_despesas INT AUTO_INCREMENT PRIMARY KEY,
+    id INT,
+    valor_despesas DECIMAL(10, 2) NOT NULL,
+    desc_despesas VARCHAR(255),
+    data_emissao DATE,
+    categoria VARCHAR(100),
+    FOREIGN KEY (id) REFERENCES Usuario(id)
+);

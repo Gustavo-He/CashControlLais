@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #fff;
+        }
+
+        .logo {
+            width: 100px;
+        }
+
+        .main-content {
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: -200px;
+        }
+
+        .main-content img {
+            max-width: 100%;
+            height: 300px;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        .buttons button {
+            min-width: 200px; /* Aumentei a largura dos botões */
+            padding: 15px 30px; /* Aumentei o preenchimento dos botões */
+            margin: 0 10px;
+            border: none;
+            border-radius: 20px;
+            background-color: #09E3A2;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            margin-top: auto;
+        }
+
+        .footer img:nth-child(1) {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+        }
+
+        .footer img:nth-child(2) {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+        }
+
+        .footer img:nth-child(1),
+        .footer img:nth-child(2) {
+            width: 200px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <img src="../static/Logo1.png" alt="Logo" class="logo">
+    </div>
+</div>
+
+<div class="main-content">
+    <img src="../static/Logo.jpg" alt="Imagem Principal">
+    <div class="buttons">
+        <a href="/login"><button>Logar</button></a>
+        <a href="/cadastro"><button>Cadastre-se</button></a>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="footer-images">
+        <img src="../static/Recorte-Esquerdo.png" alt="Imagem Inferior Esquerda">
+        <img src="../static/Recorte-Direito.png" alt="Imagem Inferior Direita">
+    </div>
+</div>
+
+</body>
+</html>
